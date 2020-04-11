@@ -58,14 +58,15 @@ const covid19ImpactEstimator = (data) => {
     * 100) / 100;
   } else if (data.periodType === 'weeks') {
     impact.dollarsInFlight = Math.floor(totalImpactLoss * data.timeToElapse * 7 * 100) / 100;
-    severeImpact.dollarsInFlight =  Math.floor(totalSevereImpactLoss * data.timeToElapse
+    severeImpact.dollarsInFlight = Math.floor(totalSevereImpactLoss * data.timeToElapse
     * 7 * 100) / 100;
   } else {
     impact.dollarsInFlight = Math.floor(totalImpactLoss * data.timeToElapse * 30 * 100) / 100;
-    severeImpact.dollarsInFlight =  Math.floor(totalSevereImpactLoss * data.timeToElapse
+    severeImpact.dollarsInFlight = Math.floor(totalSevereImpactLoss * data.timeToElapse
     * 30 * 100) / 100;
   }
   return { data, impact, severeImpact };
 };
+export default covid19ImpactEstimator;
 
 
