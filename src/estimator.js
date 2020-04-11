@@ -1,4 +1,3 @@
-
 const covid19ImpactEstimator = (data) => {
   const impact = {};
   const severeImpact = {};
@@ -31,10 +30,11 @@ const covid19ImpactEstimator = (data) => {
     * 0.15);
   // Available beds for severe affected customers
   const totalBedsforSevere = data.totalHospitalBeds * 0.35;
-  impact.hospitalBedsByRequestedTime = totalBedsforSevere - impact.severeCasesByRequestedTime;
+  impact.hospitalBedsByRequestedTime = Math.floor(totalBedsforSevere
+    - impact.severeCasesByRequestedTime);
   // Available number of beds for severeimpact
-  severeImpact.hospitalBedsByRequestedTime = totalBedsforSevere
-  - severeImpact.severeCasesByRequestedTime;
+  severeImpact.hospitalBedsByRequestedTime = Math.floor(totalBedsforSevere
+  - severeImpact.severeCasesByRequestedTime);
   return { data, impact, severeImpact };
 };
 export default covid19ImpactEstimator;
