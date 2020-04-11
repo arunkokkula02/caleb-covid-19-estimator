@@ -56,7 +56,7 @@ const covid19ImpactEstimator = (data) => {
     impact.dollarsInFlight = Math.trunc(totalImpactLoss / data.timeToElapse);
     severeImpact.dollarsInFlight = Math.trunc(totalSevereImpactLoss / data.timeToElapse);
   } else if (data.periodType === 'weeks') {
-    impact.dollarsInFlight = Math.trunc(totalImpactLoss / (data.timeToElapse * 7) );
+    impact.dollarsInFlight = Math.trunc(totalImpactLoss / (data.timeToElapse * 7));
     severeImpact.dollarsInFlight = Math.trunc(totalSevereImpactLoss / (data.timeToElapse
     * 7));
   } else {
@@ -67,4 +67,3 @@ const covid19ImpactEstimator = (data) => {
   return { data, impact, severeImpact };
 };
 export default covid19ImpactEstimator;
-
