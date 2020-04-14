@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const covidEstimator = require('./estimator')
+const covidEstimator = require('./src/estimator')
 const O2x = require('object-to-xml');
-const logger = require('./logger');
+const logger = require('./src/logger');
 const fs = require('fs');
 
 const app = express();
