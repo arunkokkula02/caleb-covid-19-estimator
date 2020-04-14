@@ -12,7 +12,8 @@ const logger = (req, res, next) => {
   const start = process.hrtime();
   const duration = getRequestDurationInseconds(start);
   const log = `${method}\t\t${url}\t\tdone in ${duration.toLocaleString()} ms`;
-  fs.appendFile('logs.log', log + '\n');
+  fs.appendFile('logs.log', `${log}
+  `);
   next();
 };
 module.exports = logger;
